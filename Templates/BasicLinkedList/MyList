@@ -1,14 +1,95 @@
 
 public class MyList {
+	
+	private MyNode pHead;
+	private MyNode pTail;
+	private MyNode pHelper;
+	private int size;
+	
+	
+	public MyList(){
+		MyNode first = new MyNode();
+		this.setpTail(first);
+		this.setpHead(first);
+	}
 
+	public MyList(MyNode info){
+		MyNode first = info;
+		this.setpTail(first);
+		this.setpHead(first);
+		this.setSize(1);
+	}
+	
+	public void addNodeToEnd(MyNode node){
+		getpTail().setNext(node);
+		setpHelper(getpTail());
+		setpTail(getpHelper().getNext());
+		setSize(getSize()+1);
+		
+	}
+	public void removeEndNode(){
+		setpTail(getpTail().getPrev());
+		getpTail().setNext(null);
+		setSize(getSize() -1);
+		
+	}
+	public void printList(){
+		setpHelper(getpHead());
+		System.out.printf("Head: ");
+		for(int i=0; i<size; i++){
+			String x = getpHelper().getInfo().getName();
+			System.out.printf("%s,  ",x);
+			
+			if(getpHelper().getNext() != null){
+				setpHelper(getpHelper().getNext());
+			}
+		}
+		
+	}
+	
+	
+	public void printByID(){}
+	public void printByRank(){}
+	public void printByUserName(){}
+	public void printByName(){}
+	
+	
+	
+	
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public MyNode getpHead() {
+		return pHead;
+	}
+
+	public void setpHead(MyNode pHead) {
+		this.pHead = pHead;
+	}
+
+	public MyNode getpTail() {
+		return pTail;
+	}
+
+	public void setpTail(MyNode pTail) {
+		this.pTail = pTail;
+	}
+
+	public MyNode getpHelper() {
+		return pHelper;
+	}
+
+	public void setpHelper(MyNode pHelper) {
+		this.pHelper = pHelper;
+	}
+	
 
 		
-		public static void main(String[] args){
-			String input1= "Mr John Smith   ";
-			int	   input2= 13;
-			
-			String answer= "hello";
-			System.out.println(answer);
-		}
 	
 }
