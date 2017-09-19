@@ -1,0 +1,42 @@
+
+public class MyNode {
+	
+	private MyNode prev;
+	private MyNode next;
+	private MyInfo info;
+	
+	public MyNode(){
+		
+	}
+	
+	public MyNode(MyInfo info){
+		this.setInfo(info);
+	}
+
+	public MyNode getPrev() {
+		return prev;
+	}
+
+	public void setPrev(MyNode prev) {
+		this.prev = prev;
+	}
+
+	public MyNode getNext() {
+		return next;
+	}
+
+	public void setNext(MyNode next) {
+		this.next = next;
+	}
+
+	public MyInfo getInfo() {
+		return info;
+	}
+
+	public void setInfo(MyInfo info) {
+		this.info = info;
+	}
+	
+	
+	
+}
